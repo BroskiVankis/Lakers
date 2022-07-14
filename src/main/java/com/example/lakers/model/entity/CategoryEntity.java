@@ -16,7 +16,7 @@ public class CategoryEntity extends BaseEntity {
 
     private String description;
 
-    public CategoryEntity() {
+    public CategoryEntity(CategoryNameEnum categoryNameEnum, String s) {
     }
 
     public CategoryNameEnum getName() {

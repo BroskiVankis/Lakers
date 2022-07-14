@@ -1,9 +1,10 @@
 package com.example.lakers.repository;
 
-import com.example.lakers.model.entity.ProductEntity;
+
+import com.example.lakers.model.entity.CategoryEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductRepository extends JpaRepository<ProductEntity, String> {
+public interface CategoryRepository extends JpaRepository<CategoryEntity, String> {
 }

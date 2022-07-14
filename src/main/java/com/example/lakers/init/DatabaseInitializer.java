@@ -1,5 +1,6 @@
 package com.example.lakers.init;
 
+import com.example.lakers.service.CategoryService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

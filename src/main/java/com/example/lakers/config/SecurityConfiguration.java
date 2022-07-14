@@ -1,5 +1,7 @@
 package com.example.lakers.config;
 
+import com.example.lakers.model.user.LakersUserDetails;
+import com.example.lakers.repository.UserRepository;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +14,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 public class SecurityConfiguration {
+
+    private UserRepository userRepository;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -44,8 +48,8 @@ public class SecurityConfiguration {
         return http.build();
     }
 
-//    @Bean
-//    public UserDetailsService userDetailsService(UserRepository userRepository) {
-//        return new UserDetailsService(userRepository);
-//    }
+    @Bean
+    public UserDetailsService userDetailsService(UserRepository userRepository) {
+        return new LakersUserDetails(userRepository);
+    }
 }
